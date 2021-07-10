@@ -1,14 +1,33 @@
 import React from 'react'
 import { View, Text,TextInput,Button } from 'react-native';
 import { useForm, Controller } from 'react-hook-form';
-import { useNavigation } from '@react-navigation/native';
 
-const SignInForm = (props) => {
+const SignUpForm = (props) => {
     const { control, handleSubmit, formState: { errors } } = useForm();
-    const navigation=useNavigation()
+
     return (
         <View>
-        <Text>Admin Id</Text>
+         <Text>Name :</Text>
+        <Controller
+    control={control}
+    rules={{
+     required: true,
+    }}
+    render={({ field: { onChange, onBlur, value } }) => (
+      <TextInput
+        onBlur={onBlur}
+        onChangeText={onChange}
+        value={value}
+      />
+    )}
+    name="name"
+    defaultValue=""
+  />
+   {errors.name && <Text>This is required.</Text>}
+
+
+  {/* E-mail */}
+           <Text>E-mail: :</Text>
         <Controller
     control={control}
     rules={{
@@ -24,7 +43,7 @@ const SignInForm = (props) => {
     name="email"
     defaultValue=""
   />
-   {errors.email && <Text>This is required.</Text>}
+  {/* Password Input */}
 <Text>Password: </Text>
 <Controller
   control={control}
@@ -42,10 +61,9 @@ const SignInForm = (props) => {
   defaultValue=""
 />
 
-<Button title="Sign In" onPress={handleSubmit(props.onSubmit)} />
-<Button title="Sign Up" onPress={()=>navigation.navigate('Sign Up')}/>
-    </View>
+<Button title="Sign Up" onPress={handleSubmit(props.onSubmit)} />
+        </View>
     )
 }
 
-export default SignInForm
+export default SignUpForm
