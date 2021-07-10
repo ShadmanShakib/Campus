@@ -7,7 +7,7 @@ import { HomeScreen, SignIn, SignUpScreen } from "./screens";
 const Stack = createStackNavigator();
 
 function App() {
-  const [isSignIn, setIsSignIn] = React.useState(false);
+  const [isSignIn, setIsSignIn] = React.useState(true);
   return (
     <NavigationContainer>
       <Stack.Navigator>
