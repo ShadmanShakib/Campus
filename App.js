@@ -2,12 +2,13 @@ import * as React from 'react';
 import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { HomeScreen,SignIn,SignUpScreen } from './screens';
-
+import { HomeScreen,SignIn,SignUpScreen, MainScreen } from './screens';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 
 const Stack = createStackNavigator();
 
 function App() {
+  const Drawer = createDrawerNavigator();
   const [isSignIn, setIsSignIn]=React.useState(false);
   const [isLoading,setIsLoading]=React.useState(true);
   React.useEffect(()=>{
@@ -22,7 +23,7 @@ function App() {
         {
           isSignIn?
           <>
-            <Stack.Screen name="Home" component={HomeScreen} />
+       <Stack.Screen name="Home" component={MainScreen}/>
 
           </>
           :
