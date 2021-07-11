@@ -8,7 +8,7 @@ const SignInForm = (props) => {
     const navigation=useNavigation()
     return (
         <View>
-        <Text>Admin Id</Text>
+        <Text>Email:</Text>
         <Controller
     control={control}
     rules={{
@@ -38,7 +38,7 @@ const SignInForm = (props) => {
       value={value}
     />
   )}
-  name="Password"
+  name="password"
   defaultValue=""
 />
 

@@ -8,7 +8,14 @@ import { HomeScreen,SignIn,SignUpScreen } from './screens';
 const Stack = createStackNavigator();
 
 function App() {
-  const [isSignIn, setIsSignIn]=React.useState(false)
+  const [isSignIn, setIsSignIn]=React.useState(false);
+  const [isLoading,setIsLoading]=React.useState(true);
+  React.useEffect(()=>{
+    const authToken=localStorage.getItem("authToken")
+    if(authToken) setIsSignIn(true)
+    setIsLoading(false)
+  },[])
+  if(isLoading) return <View><Text>loading...</Text></View>
   return (
     <NavigationContainer>
       <Stack.Navigator>
@@ -16,11 +23,16 @@ function App() {
           isSignIn?
           <>
             <Stack.Screen name="Home" component={HomeScreen} />
+
           </>
           :
           <>
-          <Stack.Screen name="Sign In" component={SignIn}/>
+          <Stack.Screen 
+          
+          name="Sign In" 
+          component={SignIn}/>
            <Stack.Screen name="Sign Up" component={SignUpScreen}/>
+
           </>
         }
  

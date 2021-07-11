@@ -8,12 +8,12 @@ function HomeScreen() {
         <View>
             <Text>
                 This is HomeScreen
-
+                <Button
+                title="Sign Out"
+                onPress={()=>localStorage.clear("authToken")}
+                 />
             </Text>
-            <Button
-            onPress={()=>naviagation.navigate("Sign In")}
-             title="Sign In" 
-             />
+           
         </View>
     )
 }
