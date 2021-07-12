@@ -1,9 +1,9 @@
 import React from 'react'
 import { View,  } from 'react-native';
-import {SignInForm} from '../components/auth'
+import { SignInForm } from '../../components/auth';
 
 
-const SingIn = () => {
+const StudentSingIn = () => {
   
  const onSubmit=  (data) =>{
 
@@ -20,6 +20,7 @@ const SingIn = () => {
     .then(result =>{ 
       console.log(result);
       localStorage.setItem("authToken",result.token)
+   
     })
     .catch(error => console.log('error', error));
 }
@@ -31,4 +32,4 @@ const SingIn = () => {
     )
 }
 
-export default SingIn
+export default StudentSingIn
