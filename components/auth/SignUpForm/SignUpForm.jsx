@@ -38,8 +38,7 @@ const SignUpForm = (props) => {
         name="email"
         defaultValue=""
       />
-<<<<<<< HEAD
-      {errors.email && <Text>This is required.</Text>}
+
       {/* Password Input */}
       <Text>Password: </Text>
       <Controller
@@ -50,41 +49,13 @@ const SignUpForm = (props) => {
         render={({ field: { onChange, onBlur, value } }) => (
           <TextInput onBlur={onBlur} onChangeText={onChange} value={value} />
         )}
-        name="Password"
+        name="password"
         defaultValue=""
       />
-      {errors.Password && <Text>This is required.</Text>}
+
       <Button title="Sign Up" onPress={handleSubmit(props.onSubmit)} />
     </View>
   );
 };
-=======
-    )}
-    name="email"
-    defaultValue=""
-  />
-  {/* Password Input */}
-<Text>Password: </Text>
-<Controller
-  control={control}
-  rules={{
-   maxLength: 100,
-  }}
-  render={({ field: { onChange, onBlur, value } }) => (
-    <TextInput
-      onBlur={onBlur}
-      onChangeText={onChange}
-      value={value}
-    />
-  )}
-  name="password"
-  defaultValue=""
-/>
-
-<Button title="Sign Up" onPress={handleSubmit(props.onSubmit)} />
-        </View>
-    )
-}
->>>>>>> e7a40d1d94f1fb4d00d2f86d9b53d37f2731f92c
 
 export default SignUpForm;
