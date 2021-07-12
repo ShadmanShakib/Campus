@@ -2,6 +2,7 @@ import React from "react";
 import { View, Text } from "react-native";
 import { SignUpForm } from "../../components/auth";
 
+
 const AlumniSignUp = () => {
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
