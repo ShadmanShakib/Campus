@@ -57,7 +57,7 @@ const SignUpForm = (props) => {
       value={value}
     />
   )}
-  name="Password"
+  name="password"
   defaultValue=""
 />
 

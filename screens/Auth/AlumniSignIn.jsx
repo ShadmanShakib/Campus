@@ -1,14 +1,16 @@
 import React from 'react'
 import { View, Text } from 'react-native';
-import {SignUpForm} from '../components/auth'
+import { SignInForm} from '../../components/auth';
 
-const SignUpScreen = () => {
+const AlumniSignIn = () => {
+
     const onSubmit=(data)=>console.log(data)
+
     return (
         <View>
-          <SignUpForm onSubmit={onSubmit}/>
+            <SignInForm onSubmit={onSubmit}/>
         </View>
     )
 }
 
-export default SignUpScreen
+export default AlumniSignIn

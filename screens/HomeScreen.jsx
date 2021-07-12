@@ -2,18 +2,25 @@ import React from 'react';
 import {View,Text, Button} from 'react-native';
 import {useNavigation} from '@react-navigation/native'
 
-function HomeScreen() {
-    const naviagation=useNavigation()
+
+
+function HomeScreen({naviagation}) {
+    const navigation=useNavigation()
     return (
         <View>
+           
             <Text>
                 This is HomeScreen
+                <Button
+                title="Sign Out"
+                onPress={()=>localStorage.clear("authToken")}
+                 />
+                       <Button 
+                       title="Open drawer" onPress={() => navigation.openDrawer()} />
 
+                 
             </Text>
-            <Button
-            onPress={()=>naviagation.navigate("Sign In")}
-             title="Sign In" 
-             />
+           
         </View>
     )
 }
