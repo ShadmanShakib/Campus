@@ -8,13 +8,15 @@ function HomeScreen({naviagation}) {
     const navigation=useNavigation()
     return (
         <View>
+           
             <Text>
                 This is HomeScreen
                 <Button
                 title="Sign Out"
                 onPress={()=>localStorage.clear("authToken")}
                  />
-                       <Button title="Open drawer" onPress={() => navigation.openDrawer()} />
+                       <Button 
+                       title="Open drawer" onPress={() => navigation.openDrawer()} />
 
                  
             </Text>

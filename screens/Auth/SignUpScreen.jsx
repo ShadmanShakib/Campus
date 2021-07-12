@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Text } from 'react-native';
-import {SignUpForm} from '../components/auth'
+import {SignUpForm} from '../../components/auth'
 
 const SignUpScreen = () => {
   const myHeaders = new Headers();
