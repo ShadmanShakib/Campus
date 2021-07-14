@@ -38,6 +38,7 @@ const SignInForm = (props) => {
         name="password"
         defaultValue=""
       />
+      {errors.password && <Text>This is required.</Text>}
 
       <Button title="Sign In" onPress={handleSubmit(props.onSubmit)} />
       <Button title="Sign Up" onPress={() => navigation.navigate("Sign Up")} />
