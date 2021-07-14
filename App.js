@@ -3,6 +3,7 @@ import { View, Text, Button } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { MainScreen } from "./screens";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import {
   AlumniSignIn,
   AlumniSignUp,
@@ -24,7 +25,7 @@ function App() {
   //Checking is app is loaded or not
   const [isLoading, setIsLoading] = React.useState(true);
   React.useEffect(() => {
-    const authToken = localStorage.getItem("authToken");
+    const authToken = AsyncStorage.getItem("authToken");
     setIsLoading(false);
     if (authToken) {
       setIsSignIn(true);

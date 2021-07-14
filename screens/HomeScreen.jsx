@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, Button } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 function HomeScreen({ naviagation }) {
   const navigation = useNavigation();
@@ -10,7 +11,7 @@ function HomeScreen({ naviagation }) {
         This is HomeScreen
         <Button
           title="Sign Out"
-          onPress={() => localStorage.clear("authToken")}
+          onPress={() => AsyncStorage.removeItem("authToken")}
         />
         <Button title="Open drawer" onPress={() => navigation.openDrawer()} />
       </Text>

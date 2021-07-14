@@ -1,6 +1,7 @@
 import React from "react";
 import { View } from "react-native";
 import { SignInForm } from "../../components/auth";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const StudentSingIn = () => {
   const onSubmit = (data) => {
@@ -15,7 +16,7 @@ const StudentSingIn = () => {
       .then((response) => response.text())
       .then((result) => {
         console.log(result);
-        localStorage.setItem("authToken", result.token);
+        AsyncStorage.setItem("authToken", result.token);
       })
       .catch((error) => console.log("error", error));
   };
