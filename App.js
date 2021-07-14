@@ -5,11 +5,13 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { MainScreen } from "./screens";
 import {
   AlumniSignIn,
+  AlumniSignUp,
   CompanySignIn,
+  CompanySignUp,
   SignInHome,
   AdminSignIn,
   StudentSignIn,
-  SignUpScreen,
+  StudentSignUp,
 } from "./screens/Auth";
 
 function App() {
@@ -47,10 +49,12 @@ function App() {
           <>
             <Stack.Screen name="Sign In" component={SignInHome} />
             <Stack.Screen name="Alumni Sign In" component={AlumniSignIn} />
+            <Stack.Screen name="Alumni Sign Up" component={AlumniSignUp} />
             <Stack.Screen name="Company Sign In" component={CompanySignIn} />
+            <Stack.Screen name="Company Sign Up" component={CompanySignUp} />
             <Stack.Screen name="Admin Sign In" component={AdminSignIn} />
             <Stack.Screen name="Student Sign In" component={StudentSignIn} />
-            <Stack.Screen name="Sign Up" component={SignUpScreen} />
+            <Stack.Screen name="Student Sign Up" component={StudentSignUp} />
           </>
         )}
       </Stack.Navigator>

@@ -38,6 +38,7 @@ const SignUpForm = (props) => {
         name="email"
         defaultValue=""
       />
+      {errors.email && <Text>This is required.</Text>}
 
       {/* Password Input */}
       <Text>Password: </Text>
@@ -52,6 +53,7 @@ const SignUpForm = (props) => {
         name="password"
         defaultValue=""
       />
+      {errors.password && <Text>This is required.</Text>}
 
       <Button title="Sign Up" onPress={handleSubmit(props.onSubmit)} />
     </View>
